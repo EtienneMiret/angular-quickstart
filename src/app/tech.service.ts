@@ -11,7 +11,11 @@ export class TechService {
 
   fetchTopTechs(): Promise<Tech[]> {
     return this.fetchTechs()
-      .then(techs => techs.slice(0, 5));
+      .then(techs => {
+        const sorted = techs.slice();
+        sorted.sort((a, b) => b.grade - a.grade);
+        return sorted.slice(0, 5);
+      });
   }
 
   fetchTech(id: number): Promise<Tech> {
