@@ -47,4 +47,10 @@ export class TechService {
       .then(response => response.json().data as Tech);
   }
 
+  delete(tech: Tech): Promise<void> {
+    return this.http.delete(`api/techs/${tech.id}`)
+      .toPromise()
+      .then(response => null);
+  }
+
 }

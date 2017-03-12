@@ -34,4 +34,14 @@ export class TechsComponent implements OnInit {
       });
   }
 
+  remove(tech: Tech): void {
+    this.techService.delete(tech)
+      .then(() => {
+        this.techs = this.techs.filter(t => t !== tech);
+        if (this.selected === tech) {
+          this.selected = null;
+        }
+      });
+  }
+
 }
