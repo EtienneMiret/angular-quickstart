@@ -22,7 +22,7 @@ export class TechDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route
       .params
-      .switchMap((params: Params) => this.techService.fetchTech(+params['id']))
+      .switchMap((params: Params) => this.techService.fetchOne(+params['id']))
       .subscribe(tech => this.tech = tech);
   }
 

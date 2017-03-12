@@ -10,14 +10,14 @@ export class TechService {
     private http: Http
   ) {}
 
-  fetchTechs(): Promise<Tech[]> {
+  fetchAll(): Promise<Tech[]> {
     return this.http.get('api/techs')
       .toPromise()
       .then(response => response.json().data as Tech[]);
   }
 
-  fetchTopTechs(): Promise<Tech[]> {
-    return this.fetchTechs()
+  fetchTop(): Promise<Tech[]> {
+    return this.fetchAll()
       .then(techs => {
         const sorted = techs.slice();
         sorted.sort((a, b) => b.grade - a.grade);
@@ -25,7 +25,7 @@ export class TechService {
       });
   }
 
-  fetchTech(id: number): Promise<Tech> {
+  fetchOne(id: number): Promise<Tech> {
     return this.http.get(`api/techs/${id}`)
       .toPromise()
       .then(response => response.json().data as Tech);

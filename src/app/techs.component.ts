@@ -19,7 +19,7 @@ export class TechsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.techService.fetchTechs().then(techs => this.techs = techs);
+    this.techService.fetchAll().then(techs => this.techs = techs);
   }
 
 }
