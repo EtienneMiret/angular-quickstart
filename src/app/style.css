@@ -15,6 +15,10 @@ ul.techs > li {
     border-radius: 4px;
 }
 
+ul.techs > li.selected {
+    background-color: hsl(0, 50%, 55%);
+}
+
 ul.techs > li:hover {
     color: #607d8b;
     background-color: #dddddd;

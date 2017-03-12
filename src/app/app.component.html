@@ -1,7 +1,10 @@
 <h1>{{title}}</h1>
 <h2>My technologies</h2>
 <ul class="techs">
-  <li *ngFor="let tech of techs" (click)="selected = tech;"><span class="badge">{{tech.id}}</span> {{tech.name}}</li>
+  <li *ngFor="let tech of techs" (click)="selected = tech;" [class.selected]="tech === selected">
+    <span class="badge">{{tech.id}}</span>
+    {{tech.name}}
+  </li>
 </ul>
 
 <div *ngIf="selected">
