@@ -1,16 +1,19 @@
 <h1>{{title}}</h1>
 <h2>My technologies</h2>
 <ul class="techs">
-  <li *ngFor="let tech of techs"><span class="badge">{{tech.id}}</span> {{tech.name}}</li>
+  <li *ngFor="let tech of techs" (click)="selected = tech;"><span class="badge">{{tech.id}}</span> {{tech.name}}</li>
 </ul>
-<h2>{{tech.name}} details!</h2>
-<dl>
-  <div>
-    <dt>Id:</dt>
-    <dd>{{tech.id}}</dd>
-  </div>
-  <div>
-    <dt>Name:</dt>
-    <dd><input [(ngModel)]="tech.name" placeholder="name"></dd>
-  </div>
-</dl>
+
+<div *ngIf="selected">
+  <h2>{{selected.name}} details!</h2>
+  <dl>
+    <div>
+      <dt>Id:</dt>
+      <dd>{{selected.id}}</dd>
+    </div>
+    <div>
+      <dt>Name:</dt>
+      <dd><input [(ngModel)]="selected.name" placeholder="name"></dd>
+    </div>
+  </dl>
+</div>

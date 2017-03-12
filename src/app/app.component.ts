@@ -10,8 +10,5 @@ import { techs } from './tech-list';
 export class AppComponent  {
   title = 'Tour of technologies';
   techs = techs;
-  tech: Tech = {
-    id: 1,
-    name: 'Angular'
-  }
+  selected: Tech = null;
 }
