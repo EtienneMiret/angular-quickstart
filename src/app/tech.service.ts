@@ -5,8 +5,8 @@ import { techs } from './tech-list';
 @Injectable()
 export class TechService {
 
-  fetchTechs(): Tech[] {
-    return techs;
+  fetchTechs(): Promise<Tech[]> {
+    return Promise.resolve(techs);
   }
 
 }

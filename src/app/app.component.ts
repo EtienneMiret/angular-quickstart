@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.techs = this.techService.fetchTechs();
+    this.techService.fetchTechs().then(techs => this.techs = techs);
   }
 
 }
