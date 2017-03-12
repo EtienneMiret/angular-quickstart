@@ -15,6 +15,10 @@ import { DashboardComponent } from './dashboard.component';
     FormsModule,
     RouterModule.forRoot([
       {
+        path: 'techs/:id',
+        component: TechDetailComponent
+      },
+      {
         path: 'techs',
         component: TechsComponent
       },

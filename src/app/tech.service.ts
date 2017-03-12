@@ -14,4 +14,8 @@ export class TechService {
       .then(techs => techs.slice(0, 5));
   }
 
+  fetchTech(id: number): Promise<Tech> {
+    return Promise.resolve(techs.filter(t => t.id === id)[0]);
+  }
+
 }

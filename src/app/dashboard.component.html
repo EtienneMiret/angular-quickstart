@@ -1,6 +1,6 @@
 <section>
   <h1>Top Technologies</h1>
   <ol>
-    <li *ngFor="let tech of techs">{{tech.name}}</li>
+    <li *ngFor="let tech of techs"><a routerLink="/techs/{{tech.id}}">{{tech.name}}</a></li>
   </ol>
 </section>
