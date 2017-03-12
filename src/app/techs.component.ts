@@ -4,9 +4,6 @@ import { TechService } from './tech.service';
 
 @Component({
   selector: 'my-techs',
-  providers: [
-    TechService
-  ],
   styleUrls: ['app/style.css'],
   templateUrl: 'app/techs.component.html'
 })
