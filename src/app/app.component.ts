@@ -1,14 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Tech } from './tech';
-import { techs } from './tech-list';
+import { TechService } from './tech.service';
 
 @Component({
   selector: 'my-app',
+  providers: [
+    TechService
+  ],
   styleUrls: ['app/style.css'],
   templateUrl: 'app/app.component.html'
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
+
   title = 'Tour of technologies';
-  techs = techs;
+
+  techs: Tech[];
+
   selected: Tech = null;
+
+  constructor(
+    private techService: TechService
+  ) {}
+
+  ngOnInit(): void {
+    this.techs = this.techService.fetchTechs();
+  }
+
 }
