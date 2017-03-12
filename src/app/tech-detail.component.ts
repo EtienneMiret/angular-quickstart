@@ -2,9 +2,10 @@ import { Component, Input } from '@angular/core';
 import { Tech } from './tech';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-tech-detail',
-  styleUrls: ['app/tech-detail.component.css'],
-  templateUrl: 'app/tech-detail.component.html'
+  styleUrls: ['tech-detail.component.css'],
+  templateUrl: 'tech-detail.component.html'
 })
 export class TechDetailComponent {
 

@@ -3,9 +3,10 @@ import { Tech } from './tech';
 import { TechService } from './tech.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-techs',
-  styleUrls: ['app/style.css'],
-  templateUrl: 'app/techs.component.html'
+  styleUrls: ['style.css'],
+  templateUrl: 'techs.component.html'
 })
 export class TechsComponent implements OnInit {
 
