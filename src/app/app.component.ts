@@ -4,6 +4,7 @@ import { techs } from './tech-list';
 
 @Component({
   selector: 'my-app',
+  styleUrls: ['app/style.css'],
   templateUrl: 'app/app.component.html'
 })
 export class AppComponent  {
