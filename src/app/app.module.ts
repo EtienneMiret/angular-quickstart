@@ -7,6 +7,7 @@ import { AppComponent }  from './app.component';
 import { TechsComponent }  from './techs.component';
 import { TechDetailComponent } from './tech-detail.component';
 import { TechService } from './tech.service';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   imports:      [
@@ -16,6 +17,11 @@ import { TechService } from './tech.service';
       {
         path: 'techs',
         component: TechsComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        component: DashboardComponent
       }
     ])
   ],
@@ -24,6 +30,7 @@ import { TechService } from './tech.service';
   ],
   declarations: [
     AppComponent,
+    DashboardComponent,
     TechsComponent,
     TechDetailComponent
   ],
