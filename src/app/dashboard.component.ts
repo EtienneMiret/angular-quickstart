@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.techService.fetchTechs().then(techs => this.techs = techs);
+    this.techService.fetchTopTechs().then(techs => this.techs = techs);
   }
 
 }

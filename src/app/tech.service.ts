@@ -9,4 +9,9 @@ export class TechService {
     return Promise.resolve(techs);
   }
 
+  fetchTopTechs(): Promise<Tech[]> {
+    return this.fetchTechs()
+      .then(techs => techs.slice(0, 5));
+  }
+
 }
