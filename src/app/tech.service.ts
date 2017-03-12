@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Tech } from './tech';
 
 @Injectable()
 export class TechService {
+
+  private headers = new Headers({
+    'Content-Type': 'application/json'
+  });
 
   constructor(
     private http: Http
@@ -29,6 +33,12 @@ export class TechService {
     return this.http.get(`api/techs/${id}`)
       .toPromise()
       .then(response => response.json().data as Tech);
+  }
+
+  update(tech: Tech): Promise<Tech> {
+    return this.http.put(`api/techs/${tech.id}`, JSON.stringify(tech), this.headers)
+      .toPromise()
+      .then(() => tech);
   }
 
 }

@@ -26,4 +26,8 @@ export class TechDetailComponent implements OnInit {
       .subscribe(tech => this.tech = tech);
   }
 
+  save(): void {
+    this.techService.update(this.tech);
+  }
+
 }
