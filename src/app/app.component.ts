@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Tech {
-  id: number;
-  name: string;
-}
+import { Tech } from './tech';
 
 @Component({
   selector: 'my-app',
