@@ -22,4 +22,16 @@ export class TechsComponent implements OnInit {
     this.techService.fetchAll().then(techs => this.techs = techs);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) {
+      return;
+    }
+    this.techService.create(name)
+      .then(tech => {
+        this.techs.push(tech);
+        this.selected = tech;
+      });
+  }
+
 }

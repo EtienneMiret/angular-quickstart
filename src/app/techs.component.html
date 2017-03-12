@@ -10,3 +10,8 @@
   <h1>{{selected.name}} is my tech</h1>
   <a routerLink="/techs/{{selected.id}}">See details</a>
 </section>
+
+<section>
+  <label>Tech name: <input #techName></label>
+  <button (click)="add(techName.value);">Add</button>
+</section>

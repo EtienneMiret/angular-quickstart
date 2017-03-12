@@ -41,4 +41,10 @@ export class TechService {
       .then(() => tech);
   }
 
+  create(name: string): Promise<Tech> {
+    return this.http.post('api/techs', JSON.stringify({name, grade: 10}), this.headers)
+      .toPromise()
+      .then(response => response.json().data as Tech);
+  }
+
 }
