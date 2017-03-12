@@ -7,16 +7,4 @@
   </li>
 </ul>
 
-<div *ngIf="selected">
-  <h2>{{selected.name}} details!</h2>
-  <dl>
-    <div>
-      <dt>Id:</dt>
-      <dd>{{selected.id}}</dd>
-    </div>
-    <div>
-      <dt>Name:</dt>
-      <dd><input [(ngModel)]="selected.name" placeholder="name"></dd>
-    </div>
-  </dl>
-</div>
+<my-tech-detail [tech]="selected"></my-tech-detail>

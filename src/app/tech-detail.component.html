@@ -1,0 +1,13 @@
+<section *ngIf="tech">
+  <h1>{{tech.name}}</h1>
+  <dl>
+    <div>
+      <dt>Id:</dt>
+      <dd>{{tech.id}}</dd>
+    </div>
+    <div>
+      <dt>Name:</dt>
+      <dd><input [(ngModel)]="tech.name" placeholder="name"></dd>
+    </div>
+  </dl>
+</section>
