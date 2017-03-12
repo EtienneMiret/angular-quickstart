@@ -1,12 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
 import { Tech } from './tech';
-import { techs } from './tech-list';
 
 @Injectable()
 export class TechService {
 
+  constructor(
+    private http: Http
+  ) {}
+
   fetchTechs(): Promise<Tech[]> {
-    return Promise.resolve(techs);
+    return this.http.get('api/techs')
+      .toPromise()
+      .then(response => response.json().data as Tech[]);
   }
 
   fetchTopTechs(): Promise<Tech[]> {
@@ -19,7 +26,9 @@ export class TechService {
   }
 
   fetchTech(id: number): Promise<Tech> {
-    return Promise.resolve(techs.filter(t => t.id === id)[0]);
+    return this.http.get(`api/techs/${id}`)
+      .toPromise()
+      .then(response => response.json().data as Tech);
   }
 
 }
