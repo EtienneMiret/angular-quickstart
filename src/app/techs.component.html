@@ -13,5 +13,5 @@
 
 <section>
   <label>Tech name: <input #techName></label>
-  <button (click)="add(techName.value);">Add</button>
+  <button (click)="add(techName.value); techName.value = '';">Add</button>
 </section>
