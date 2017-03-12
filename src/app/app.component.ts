@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Tech } from './tech';
+import { techs } from './tech-list';
 
 @Component({
   selector: 'my-app',
@@ -7,6 +8,7 @@ import { Tech } from './tech';
 })
 export class AppComponent  {
   title = 'Tour of technologies';
+  techs = techs;
   tech: Tech = {
     id: 1,
     name: 'Angular'
