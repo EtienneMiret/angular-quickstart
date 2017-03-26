@@ -34,7 +34,7 @@ export class TechSearchComponent implements OnInit {
   }
 
   search(term: string) {
-    console.log('Searching:', term);
+    console.log('Input:', term);
     this.searchTerms.next(term);
   }
 

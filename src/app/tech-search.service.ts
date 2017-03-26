@@ -13,6 +13,7 @@ export class TechSearchService {
   ) {}
 
   search(term: string): Observable<Tech[]> {
+    console.log('Searching:', term);
     return this.http
       .get(`app/techs/?name=${term}`)
       .map(response => response.json().data as Tech[]);
