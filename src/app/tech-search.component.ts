@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { TechSearchService } from './tech-search.service';
-import { Observable, Subject } from 'rxjs';
 import { Tech } from './tech';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
   moduleId: module.id,
