@@ -11,6 +11,7 @@ import { TechService } from './tech.service';
 import { DashboardComponent } from './dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { InMemoryDataSerice } from './in-memory-data.service';
+import { TechSearchComponent } from './tech-search.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { InMemoryDataSerice } from './in-memory-data.service';
     AppComponent,
     DashboardComponent,
     TechsComponent,
+    TechSearchComponent,
     TechDetailComponent
   ],
   bootstrap:    [ AppComponent ]
