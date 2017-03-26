@@ -1,0 +1,9 @@
+<section class="search-component">
+  <h1>Tech Search</h1>
+  <input #searchBox (keyup)="search(searchBox.value);">
+  <ul class="search-results">
+    <li *ngFor="let tech of techs | async">
+      <a routerLink="/techs/{{tech.id}}">{{tech.name}}</a>
+    </li>
+  </ul>
+</section>
